@@ -14,6 +14,7 @@ How to start:
 - <b>Router name</b> - when you want to call as a different URL, e.g.: http://locahost:3000/myserver
 - <b>Port number</b> - port number.
 - <b>Real server host</b> - assigns the URL real server for intercept all requests/responses.
+- <b>Foward mode</b> - when it's on, intercepts a request and collects the response, storing into fakeServer fold.
 
 Call the server via Postman
 
