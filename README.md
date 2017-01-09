@@ -19,7 +19,7 @@ How to start:
 		- when it's off, delivers the response from fakeServer folder.
 
 
-Call the server via Postman
+A service request by Postman
 
 ![alt tag](https://github.com/andersonfonseka/mock-server/blob/master/images/postman.png)
 
