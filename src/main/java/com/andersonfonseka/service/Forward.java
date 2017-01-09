@@ -70,7 +70,7 @@ public class Forward {
 		
 		Header[] headersResponse = response.getAllHeaders();
 		for (int i = 0; i < headersResponse.length; i++) {
-			System.out.println(headersResponse[i].getName() + " - " + headersResponse[i].getValue());
+			this.progressMonitor.addMessage(new Message(Message.GENERIC, headersResponse[i].getName() + " - " + headersResponse[i].getValue()));
 		}
 		
 		BufferedReader rd = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));

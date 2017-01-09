@@ -2,6 +2,7 @@ package com.andersonfonseka.gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.AdjustmentEvent;
@@ -30,6 +31,8 @@ import com.andersonfonseka.monitor.ProgressNotifier;
 import com.andersonfonseka.parsers.WADLParser;
 import com.andersonfonseka.service.Resource;
 import com.andersonfonseka.util.RecursiveFiles;
+
+import sun.font.FontFamily;
 
 public class ServerGUI extends BaseGUI implements ProgressNotifier {
 
@@ -167,13 +170,18 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 
 
 		getjPanelSelection().add(new JLabel("Execution logs"));
+		
+		lbStatus.setForeground(Color.GREEN);
+		lbStatus.setBackground(Color.BLACK);
+
+		
 		JScrollPane jScrollPane = new JScrollPane(lbStatus);
 		jScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		jScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		
 		jScrollPane.getVerticalScrollBar().addAdjustmentListener(new AdjustmentListener() {  
 	        public void adjustmentValueChanged(AdjustmentEvent e) {  
-	            e.getAdjustable().setValue(e.getAdjustable().getMaximum());  
+	            e.getAdjustable().setValue(e.getAdjustable().getMaximum()-400);  
 	        }
 	    }); 
 		
@@ -219,6 +227,7 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 					}
 					
 					btGenerate.setEnabled(false);
+					
 					progressMonitor.addMessage(new Message(Message.GENERIC,"Starting server..."));
 					
 					ServerGUI.GLOBAL_REAL_HOST = txRealHost.getText();
