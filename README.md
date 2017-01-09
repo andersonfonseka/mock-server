@@ -2,7 +2,7 @@
 
 - < 10 seconds
 - No code
-- Intercepts your real server, collects a returned responses and works in offline mode.
+- Intercepts your real server, collects a returned response and works in offline mode.
 
 How to start:
 
