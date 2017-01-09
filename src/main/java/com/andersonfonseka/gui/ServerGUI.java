@@ -40,11 +40,13 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 	public static String GLOBAL_WADL_PATH = System.getProperty("user.dir");
 	public static String GLOBAL_REAL_HOST = "";
 	public static boolean GLOBAL_FORWARD_MODE = true;
+	public static boolean GLOBAL_HEADER_PROPAGATION = true;
 	
 	JTextField txJsonPath = new JTextField("", 60);
 	JTextField txPortNumber = new JTextField("3000", 4);
 	JTextField txRouterName = new JTextField("/", 60);
 	JCheckBox chForwardMode = new JCheckBox();
+	JCheckBox chHeaderPropagation = new JCheckBox();
 	
 	JTextField txRealHost = new JTextField("https://reqres.in/", 60); //http://li996/api/
 	
@@ -122,9 +124,15 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 		
 		getjPanelSelection().add(new JLabel(getPropertiesUtil().getLabel("REAL_SERVER_HOST")));
 		getjPanelSelection().add(txRealHost);
+		getjPanelSelection().add(new JLabel());
+		
 		chForwardMode.setSelected(true);
-		chForwardMode.setText("Forward Mode");
+		chForwardMode.setText(getPropertiesUtil().getLabel("FORWARD_MODE"));
 		getjPanelSelection().add(chForwardMode);
+		chHeaderPropagation.setSelected(true);
+		chHeaderPropagation.setText(getPropertiesUtil().getLabel("HEADER_PROPAGATION"));
+		getjPanelSelection().add(chHeaderPropagation);
+		getjPanelSelection().add(new JLabel());
 		
 		getjPanelSelection().add(new JLabel("Request monitor"));
 		
@@ -215,6 +223,7 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 					
 					ServerGUI.GLOBAL_REAL_HOST = txRealHost.getText();
 					ServerGUI.GLOBAL_FORWARD_MODE = chForwardMode.isSelected();
+					ServerGUI.GLOBAL_HEADER_PROPAGATION = chHeaderPropagation.isSelected();
 
 //					JsonPath.setFilePath(txJsonPath.getText());
 //					

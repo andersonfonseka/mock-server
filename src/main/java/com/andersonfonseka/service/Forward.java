@@ -17,6 +17,7 @@ import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import com.andersonfonseka.gui.ServerGUI;
 import com.andersonfonseka.monitor.Message;
 import com.andersonfonseka.monitor.ProgressMonitor;
 
@@ -40,10 +41,12 @@ public class Forward {
 		} else if (method.equals("POST")){
 			HttpPost requestPost = new HttpPost(url);
 			requestPost.setEntity(new StringEntity(payload[0]));
+			this.progressMonitor.addMessage(new Message(Message.GENERIC, payload[0]));
 			request = requestPost;
 		} else if (method.equals("PUT")){
 			HttpPut requestPut = new HttpPut(url);
 			requestPut.setEntity(new StringEntity(payload[0]));
+			this.progressMonitor.addMessage(new Message(Message.GENERIC, payload[0]));
 			request = requestPut;
 		} else if (method.equals("DELETE")){
 			HttpDelete requestDelete = new HttpDelete(url);
@@ -51,13 +54,15 @@ public class Forward {
 		}
 		
 		Iterator<String> it =  headers.getRequestHeaders().keySet().iterator();
-		
-//		while(it.hasNext()){
-//			String key = it.next();
-//			if (!key.equals("Content-Length")){
-//				request.addHeader(key, headers.getHeaderString(key));	
-//			}
-//		}
+
+		if (ServerGUI.GLOBAL_HEADER_PROPAGATION){
+			while(it.hasNext()){
+				String key = it.next();
+				if (!key.equals("Content-Length")){
+					request.addHeader(key, headers.getHeaderString(key));	
+				}
+			}
+		}
 		
 		HttpResponse response = client.execute(request);
 
@@ -73,7 +78,7 @@ public class Forward {
 		StringBuffer result = new StringBuffer();
 		String line = "";
 		while ((line = rd.readLine()) != null) {
-			System.out.println(line);
+			this.progressMonitor.addMessage(new Message(Message.GENERIC, line));
 			result.append(line);
 		}
 		
