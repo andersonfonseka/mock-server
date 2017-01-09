@@ -6,7 +6,7 @@
 
 How to start:
 
-- Download <b>mock-server-0.0.1.zip</b>, unzip where into any folder as you wish.
+- Download <b>mock-server-0.0.1.zip</b>, unzip into any folder as you wish.
 - On Windows: double-click on mock-server-0.0.1-SNAPSHOT.jar 
 
 ![alt tag](https://github.com/andersonfonseka/mock-server/blob/master/images/mock-server.png)
