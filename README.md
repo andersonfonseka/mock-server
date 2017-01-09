@@ -11,7 +11,7 @@ How to start:
 
 ![alt tag](https://github.com/andersonfonseka/mock-server/blob/master/images/mock-server.png)
 
-- <b>Router name</b> - when you want to call as a different URL, e.g.: http://locahost:8080/myserver
+- <b>Router name</b> - when you want to call as a different URL, e.g.: http://locahost:3000/myserver
 - <b>Port number</b> - port number.
 - <b>Real server host</b> - assigns the URL real server for intercept all requests/responses.
 
