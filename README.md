@@ -1,41 +1,21 @@
 # mock-server
 
-- < 20 segundos
-- Sem codificação
-- Quando precisar emular um servidor disponibilizando serviços REST entregando JSON.
+- < 10 seconds
+- No code
+- Intercepts your real server, collects a returned responses and works in offline mode.
 
-- Criar um arquivo .json:
-
-```json
-{
-  "posts": [
-    {
-      "id": 1,
-      "title": "jsonfakeserver",
-      "author": "andersonfonseka"
-    }
-   ]
-}
-```
-
-- Baixe o arquivo <b>jsonfakeserver.zip</b> e descompacte.
-- Execute java -jar jsonfakeserver-0.0.1-SNAPSHOT.jar 
+- Download <b>mock-server-0.0.1.zip</b>, unzip where into any folder as you wish.
+- On Windows: double-click on mock-server-0.0.1-SNAPSHOT.jar 
 
 ![alt tag](https://github.com/andersonfonseka/jsonfakeserver/blob/master/images/mainscreen.png)
 
-- <b>Router name</b> - quando necessitar criar um endereço diferente, por exemplo: http://locahost:8080/meuservidor
-- <b>Port number</b> - informar o número de porta para a inicialização do servidor.
-- <b>Json path</b> - o caminho do arquivo JSON.
-- <b>Custom id</b> - permite definir um identificador para a busca da resposta JSON (padrão id).
+- <b>Router name</b> - when you want to call as a different URL, e.g.: http://locahost:8080/myserver
+- <b>Port number</b> - port number.
+- <b>Real server host</b> - assigns the URL real server for intercept all requests/responses.
 
-Chamando servidor via Postman
+Call the server via Postman
 
-![alt tag](https://github.com/andersonfonseka/jsonfakeserver/blob/master/images/postman.png)
+![alt tag](https://github.com/andersonfonseka/mock-server/blob/master/images/mock-server.png)
+![alt tag](https://github.com/andersonfonseka/mock-server/blob/master/images/postman.png)
 
-Com jsonfakeserver é possível:
-
-- É possivel executar o CRUD por meio dos métodos GET, POST, PUT, DELETE.
-- Adicionar outros tipos não previstos no json inicial. 
-
-![alt tag](https://github.com/andersonfonseka/jsonfakeserver/blob/master/images/novojson.png)
 

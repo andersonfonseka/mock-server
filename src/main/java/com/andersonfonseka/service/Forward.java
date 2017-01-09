@@ -52,12 +52,12 @@ public class Forward {
 		
 		Iterator<String> it =  headers.getRequestHeaders().keySet().iterator();
 		
-		while(it.hasNext()){
-			String key = it.next();
-			if (!key.equals("Content-Length")){
-				request.addHeader(key, headers.getHeaderString(key));	
-			}
-		}
+//		while(it.hasNext()){
+//			String key = it.next();
+//			if (!key.equals("Content-Length")){
+//				request.addHeader(key, headers.getHeaderString(key));	
+//			}
+//		}
 		
 		HttpResponse response = client.execute(request);
 
