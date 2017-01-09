@@ -15,8 +15,8 @@ How to start:
 - <b>Port number</b> - port number.
 - <b>Real server host</b> - assigns the URL real server for intercept all requests/responses.
 - <b>Foward mode</b> 
-		- when it's on, intercepts a request and collects the response, storing into fakeServer folder.
-		- when it's off, deliver the responses stored into fakeServer folder.
+		- when it's on, intercepts a request, collects the response, and stores into fakeServer folder.
+		- when it's off, delivers the response from fakeServer folder.
 
 
 Call the server via Postman
