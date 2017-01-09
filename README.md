@@ -4,6 +4,8 @@
 - No code
 - Intercepts your real server, collects a returned response and works in offline mode.
 
+![alt tag](https://github.com/andersonfonseka/mock-server/blob/master/images/general-overview.png)
+
 How to start:
 
 - Download <b>mock-server-0.0.1.zip</b>, unzip into any folder as you wish.
