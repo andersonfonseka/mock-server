@@ -40,7 +40,7 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 	public static String GLOBAL_WADL_PATH = System.getProperty("user.dir");
 	public static String GLOBAL_REAL_HOST = "";
 	public static boolean GLOBAL_FORWARD_MODE = true;
-	public static boolean GLOBAL_HEADER_PROPAGATION = true;
+	public static boolean GLOBAL_HEADER_PROPAGATION = false;
 	
 	JTextField txJsonPath = new JTextField("", 60);
 	JTextField txPortNumber = new JTextField("3000", 4);
@@ -129,7 +129,7 @@ public class ServerGUI extends BaseGUI implements ProgressNotifier {
 		chForwardMode.setSelected(true);
 		chForwardMode.setText(getPropertiesUtil().getLabel("FORWARD_MODE"));
 		getjPanelSelection().add(chForwardMode);
-		chHeaderPropagation.setSelected(true);
+		chHeaderPropagation.setSelected(false);
 		chHeaderPropagation.setText(getPropertiesUtil().getLabel("HEADER_PROPAGATION"));
 		getjPanelSelection().add(chHeaderPropagation);
 		getjPanelSelection().add(new JLabel());

@@ -17,7 +17,7 @@ How to start:
 - <b>Foward mode</b> 
 		- when it's on, intercepts a request, collects the response, and stores into fakeServer folder.
 		- when it's off, delivers the response from fakeServer folder.
-
+- <b>Header propagation</b> some calls needs to propagate information within http header such as: tokens, pagination, and so on. 
 
 A service request by Postman
 
